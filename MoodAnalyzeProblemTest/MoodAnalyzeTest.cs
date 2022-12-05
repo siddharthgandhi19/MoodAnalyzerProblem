@@ -7,16 +7,16 @@ namespace MoodAnalyzerProblemTest
         [Test] //TC1.1
         public void GivenSadMood_WhenAnalyze_ShouldReturnSad()
         {
-            MoodAnalyzer analyzer = new MoodAnalyzer(); //Arrange
-            string result = analyzer.AnalyzeMood("I am in a Sad Mood"); //Act
+            MoodAnalyzer analyzer = new MoodAnalyzer("I am in a Sad Mood"); //Arrange
+            string result = analyzer.AnalyzeMood(); //Act
             Assert.AreEqual(result, "Sad");
         }
 
         [Test] //TC1.2
         public void GivenAnyMood_WhenAnalyze_ShouldReturnHappy()
         {
-            MoodAnalyzer analyzer = new MoodAnalyzer(); //Arrange
-            string result = analyzer.AnalyzeMood("I am in a Any Mood"); //Act
+            MoodAnalyzer analyzer = new MoodAnalyzer("I am in a Any Mood"); //Arrange
+            string result = analyzer.AnalyzeMood(); //Act
             Assert.AreEqual(result, "Happy");
         }
     }
