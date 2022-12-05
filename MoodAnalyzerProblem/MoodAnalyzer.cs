@@ -11,6 +11,8 @@ namespace MoodAnalyzerProblem
         }
         public string AnalyzeMood()
         {
+            if (string.IsNullOrEmpty(message))
+                return "Happy";
             if (message.Contains("Sad"))
                 return "Sad";
             else
