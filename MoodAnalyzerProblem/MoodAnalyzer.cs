@@ -11,13 +11,18 @@ namespace MoodAnalyzerProblem
         }
         public string AnalyzeMood()
         {
-            if (string.IsNullOrEmpty(message))
-                return "Happy";
-            if (message.Contains("Sad"))
-                return "Sad";
-            else
-                return "Happy";
+            try
+            {
+                if (message.Equals(string.Empty))
+                    throw new MoodAnalyzerException(MoodAnalyzerException.MoodAnalyzerExceptionType.EMPTY_MOOD, "Mood is empty");
+                else if (message.Contains("Sad"))
+                    return "Sad";
+                else
+                    return "Happy";
+            } catch (Exception )
+            {
+                throw new MoodAnalyzerException(MoodAnalyzerException.MoodAnalyzerExceptionType.NULL_MOOD, "Mood is null");
+            }
         }
     }
 }
-          
